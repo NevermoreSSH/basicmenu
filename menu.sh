@@ -56,7 +56,8 @@ echo -e "$YB 1$y.  Task manager  $wh"
 echo -e "$YB 2$y.  Check Bandwidth  $wh"
 echo -e "$YB 3$y.  Install BBR+  $wh"
 echo -e "$YB 4$y.  Check Netflix Proxy  $wh"
-echo -e "$YB 5$y.  EXIT$wh"
+echo -e "$YB 5$y.  Speedtest  $wh"
+echo -e "$YB 6$y.  EXIT$wh"
 echo -e "${BB}————————————————————————————————————————————————————————${NC}"
 echo -e "${YB}"
 read -p "Select From Options [ 1 - 24 ] : " menu
@@ -78,6 +79,10 @@ clear
 netf
 ;;
 5)
+clear
+speedtest
+;;
+6)
 clear
 exit
 ;;
