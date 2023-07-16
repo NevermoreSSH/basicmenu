@@ -53,8 +53,8 @@ echo -e "  ${RB}♦️${NC} ${YB}Yesterday Usage     : $tyest ${NC}"
 echo -e "  ${RB}♦️${NC} ${YB}Monthly Usage       : $tmon ${NC}"
 echo -e "${BB}————————————————————————————————————————————————————————${NC}"
 echo -e "$YB 1$y.  Task manager  $wh"
-echo -e "$YB 2$y.  Check Bandwidth  $wh"
-echo -e "$YB 3$y.  Install BBR+  $wh"
+echo -e "$YB 2$y.  Install BBR+  $wh"
+echo -e "$YB 3$y.  Check Bandwidth  $wh"
 echo -e "$YB 4$y.  Check Netflix Proxy  $wh"
 echo -e "$YB 5$y.  Speedtest  $wh"
 echo -e "$YB 6$y.  EXIT$wh"
@@ -68,11 +68,11 @@ htop
 ;;
 2)
 clear
-vnstat
+bbr2
 ;;
 3)
 clear
-bbr2
+vnstat
 ;;
 4)
 clear
