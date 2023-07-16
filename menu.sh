@@ -71,7 +71,7 @@ vnstat
 ;;
 3)
 clear
-bbr2
+bbr
 ;;
 4)
 clear
