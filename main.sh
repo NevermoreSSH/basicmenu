@@ -51,7 +51,7 @@ cd /usr/sbin
 wget -O menux "${REPO}menu.sh"
 wget -O bbr2 "${REPO}bbr.sh"
 wget -O netf "${REPO}netf.sh"
-wget -O speedtest "${REPO}speedtest_cli.py"
+wget -O speedtest "${REPO}speedtest"
 
 chmod +x menux
 chmod +x bbr2
