@@ -32,14 +32,17 @@ REPO="https://raw.githubusercontent.com/NevermoreSSH/basicmenu/main/"
 APT="apt-get -y install"
 start=$(date +%s)
 
+# reboot everyday 5am
 echo "0 5 * * * root reboot" >> /etc/crontab
 
 # install basic package
 apt install htop -y 
 apt install vnstat -y 
 apt install resolvconf -y 
+
 # set time GMT +8
 ln -fs /usr/share/zoneinfo/Asia/Kuala_Lumpur /etc/localtime
+
 # install clouflare JQ
 apt install jq curl -y
 
