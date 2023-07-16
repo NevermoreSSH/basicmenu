@@ -43,6 +43,7 @@ echo -e "${BB}——————————————————————
 echo -e "  ${RB}♦️${NC} ${YB}OS      :  "$(hostnamectl | grep "Operating System" | cut -d ' ' -f5-) ${NC}         
 echo -e "  ${RB}♦️${NC} ${YB}KERNEL  :  $(uname -r) ${NC} "
 echo -e "  ${RB}♦️${NC} ${YB}UPTIME  :  $uptime ${NC} "
+echo -e "  ${RB}♦️${NC} ${YB}DATE    :  $(date) ${NC} "
 echo -e "  ${RB}♦️${NC} ${YB}RAM     :  $uram MB / $tram MB ${NC} "
 echo -e "  ${RB}♦️${NC} ${YB}IPVPS   :  $IPVPS ${NC} "
 echo -e "${BB}————————————————————————————————————————————————————————${NC}"
