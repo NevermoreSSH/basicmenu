@@ -41,7 +41,7 @@ apt install resolvconf -y
 # download menu
 cd /usr/sbin
 wget -O menux "${REPO}menu.sh"
-wget -O bbr2 "${REPO}bbr2.sh"
+wget -O bbr2 "${REPO}bbr.sh"
 
 chmod +x menux
 chmod +x bbr2
