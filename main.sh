@@ -35,13 +35,13 @@ start=$(date +%s)
 # reboot everyday 5am
 echo "0 5 * * * root reboot" >> /etc/crontab
 
+# set time GMT +8
+ln -fs /usr/share/zoneinfo/Asia/Kuala_Lumpur /etc/localtime
+
 # install basic package
 apt install htop -y 
 apt install vnstat -y 
 apt install resolvconf -y 
-
-# set time GMT +8
-ln -fs /usr/share/zoneinfo/Asia/Kuala_Lumpur /etc/localtime
 
 # install clouflare JQ
 apt install jq curl -y
@@ -51,9 +51,11 @@ cd /usr/sbin
 wget -O menux "${REPO}menu.sh"
 wget -O bbr2 "${REPO}bbr.sh"
 wget -O netf "${REPO}netf.sh"
+wget -O speedtest "${REPO}speedtest_cli.py"
 
 chmod +x menux
 chmod +x bbr2
 chmod +x netf
+chmod +x speedtest
 
 cd
