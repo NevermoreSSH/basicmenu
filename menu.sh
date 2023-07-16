@@ -83,6 +83,6 @@ exit
 ;;
 *)
 clear
-menu
+menux
 ;;
 esac
