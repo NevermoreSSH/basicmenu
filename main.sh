@@ -42,8 +42,10 @@ apt install resolvconf -y
 cd /usr/sbin
 wget -O menux "${REPO}menu.sh"
 wget -O bbr2 "${REPO}bbr.sh"
+wget -O netf "${REPO}netf.sh"
 
 chmod +x menux
 chmod +x bbr2
+chmod +x netf
 
 cd
