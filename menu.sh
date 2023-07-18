@@ -58,7 +58,7 @@ echo -e "$YB 2$y.  Install BBR+  $wh"
 echo -e "$YB 3$y.  Check Bandwidth  $wh"
 echo -e "$YB 4$y.  Check Netflix Proxy  $wh"
 echo -e "$YB 5$y.  Speedtest  $wh"
-echo -e "$YB 6$y.  EXIT$wh"
+echo -e "$YB 6$y.  Reboot$wh"
 echo -e "${BB}————————————————————————————————————————————————————————${NC}"
 echo -e "${YB}"
 read -p "Select From Options [ 1 - 24 ] : " menu
@@ -85,7 +85,7 @@ speedtest
 ;;
 6)
 clear
-exit
+reboot
 ;;
 *)
 clear
