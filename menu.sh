@@ -16,6 +16,10 @@ CB='\e[35;1m'
 WB='\e[37;1m'
 #Domain & IPVPS
 IPVPS=$(curl -s ipinfo.io/ip)
+# Getting CPU Information
+cpu_usage1="$(ps aux | awk 'BEGIN {sum=0} {sum+=$3}; END {print sum}')"
+cpu_usage="$((${cpu_usage1/\.*/} / ${corediilik:-1}))"
+cpu_usage+=" %"
 # OS Uptime
 uptime="$(uptime -p | cut -d " " -f 2-10)"
 # RAM Info
@@ -44,6 +48,7 @@ echo -e "  ${RB}♦️${NC} ${YB}OS      :  "$(hostnamectl | grep "Operating Sys
 echo -e "  ${RB}♦️${NC} ${YB}KERNEL  :  $(uname -r) ${NC} "
 echo -e "  ${RB}♦️${NC} ${YB}UPTIME  :  $uptime ${NC} "
 echo -e "  ${RB}♦️${NC} ${YB}DATE    :  $(date) ${NC} "
+echo -e "  ${RB}♦️${NC} ${YB}CPU     :  $cpu_usage"
 echo -e "  ${RB}♦️${NC} ${YB}RAM     :  $uram MB / $tram MB ${NC} "
 echo -e "  ${RB}♦️${NC} ${YB}IPVPS   :  $IPVPS ${NC} "
 echo -e "${BB}————————————————————————————————————————————————————————${NC}"
