@@ -37,11 +37,14 @@ echo "0 5 * * * root reboot" >> /etc/crontab
 
 # set time GMT +8
 ln -fs /usr/share/zoneinfo/Asia/Kuala_Lumpur /etc/localtime
+echo "clear" >> .profile
+echo "neofetch" >> .profile
 
 # install basic package
 apt install htop -y 
 apt install vnstat -y 
 apt install resolvconf -y 
+apt install neofetch -y 
 
 # install clouflare JQ
 apt install jq curl -y
