@@ -16,6 +16,12 @@ CB='\e[35;1m'
 WB='\e[37;1m'
 # Domain & IPVPS
 IPVPS=$(curl -s ipinfo.io/ip)
+ISP=$(curl -s ipinfo.io/org | cut -d " " -f 2-10)
+CITY=$(curl -s ipinfo.io/city)
+WKT=$(curl -s ipinfo.io/timezone)
+#IPVPS=$(curl -s ipinfo.io/ip)
+IPVPS=$(curl -sS ipv4.icanhazip.com)
+IPVPS=$(curl -sS ifconfig.me)
 # Getting CPU Information
 cpu_usage1="$(ps aux | awk 'BEGIN {sum=0} {sum+=$3}; END {print sum}')"
 cpu_usage="$((${cpu_usage1/\.*/} / ${corediilik:-1}))"
