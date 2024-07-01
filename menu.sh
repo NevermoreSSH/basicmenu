@@ -65,7 +65,7 @@ echo -e "${BB}——————————————————————
 echo -e "  ${RB}♦️${NC} ${YB}Daily Usage         : $ttoday ${NC}"
 echo -e "  ${RB}♦️${NC} ${YB}Yesterday Usage     : $tyest ${NC}"
 echo -e "  ${RB}♦️${NC} ${YB}Monthly Usage       : $tmon ${NC}"
-echo -e "  ${RB}♦️${NC} ${YB}Total Usage       : $totalmon ${NC}"
+echo -e "  ${RB}♦️${NC} ${YB}Total Usage         : $totalmon ${NC}"
 echo -e "${BB}————————————————————————————————————————————————————————${NC}"
 echo -e "$YB 1$y.  Task manager  $wh"
 echo -e "$YB 2$y.  Install BBR+  $wh"
