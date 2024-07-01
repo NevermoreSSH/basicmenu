@@ -43,6 +43,8 @@ tyest="$(vnstat -i eth0 | grep "yesterday" | awk '{print $8" "substr ($9, 1, 1)}
 dmon="$(vnstat -i eth0 -m | grep "$(date +"%b '%y")" | awk '{print $3" "substr ($4, 1, 1)}')"
 umon="$(vnstat -i eth0 -m | grep "$(date +"%b '%y")" | awk '{print $6" "substr ($7, 1, 1)}')"
 tmon="$(vnstat -i eth0 -m | grep "$(date +"%b '%y")" | awk '{print $9" "substr ($10, 1, 1)}')"
+totalmon="$(vnstat | grep "total:" | awk '{print $8, $9}')"
+
 
 echo ""
 echo -e "$y                        MAIN MENU $wh"
@@ -63,6 +65,7 @@ echo -e "${BB}——————————————————————
 echo -e "  ${RB}♦️${NC} ${YB}Daily Usage         : $ttoday ${NC}"
 echo -e "  ${RB}♦️${NC} ${YB}Yesterday Usage     : $tyest ${NC}"
 echo -e "  ${RB}♦️${NC} ${YB}Monthly Usage       : $tmon ${NC}"
+echo -e "  ${RB}♦️${NC} ${YB}Total Usage       : $totalmon ${NC}"
 echo -e "${BB}————————————————————————————————————————————————————————${NC}"
 echo -e "$YB 1$y.  Task manager  $wh"
 echo -e "$YB 2$y.  Install BBR+  $wh"
