@@ -32,9 +32,9 @@ uptime="$(uptime -p | cut -d " " -f 2-10)"
 tram=$(free -m | awk 'NR==2 {print $2}')
 uram=$(free -m | awk 'NR==2 {print $3}')
 # Total BANDWIDTH
-dtoday="$(vnstat -i eth0 | grep "today" | awk '{print $2" "substr ($3, 1, 1)}')"
-utoday="$(vnstat -i eth0 | grep "today" | awk '{print $5" "substr ($6, 1, 1)}')"
-ttoday="$(vnstat -i eth0 | grep "today" | awk '{print $8" "substr ($9, 1, 1)}')"
+dtoday="$(vnstat | grep today | awk '{print $2, $3}')"
+utoday="$(vnstat | grep today | awk '{print $5, $6}')"
+ttoday="$(vnstat | grep today | awk '{print $8, $9}')"
 # Download/Upload yesterday
 dyest="$(vnstat | grep yesterday | awk '{print $2, $3}')"
 uyest="$(vnstat | grep yesterday | awk '{print $5, $6}')"
