@@ -40,9 +40,9 @@ dyest="$(vnstat | grep yesterday | awk '{print $2, $3}')"
 uyest="$(vnstat | grep yesterday | awk '{print $5, $6}')"
 tyest="$(vnstat | grep yesterday | awk '{print $8, $9}')"
 # Download/Upload current month
-dmon="$(vnstat | grep today | awk '{print $2, $3}')"
-umon="$(vnstat | grep today | awk '{print $5, $6}')"
-tmon="$(vnstat | grep today | awk '{print $8, $9}')"
+dmon="$(vnstat -m | grep "$(date '+%Y-%m')" | awk '{print $2, $3}')"
+umon="$(vnstat -m | grep "$(date '+%Y-%m')" | awk '{print $5, $6}')"
+tmon="$(vnstat -m | grep "$(date '+%Y-%m')" | awk '{print $8, $9}')"
 # total usage 
 totalmon="$(vnstat | grep "total:" | awk '{print $8, $9}')"
 
