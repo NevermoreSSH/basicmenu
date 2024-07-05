@@ -36,13 +36,14 @@ dtoday="$(vnstat -i eth0 | grep "today" | awk '{print $2" "substr ($3, 1, 1)}')"
 utoday="$(vnstat -i eth0 | grep "today" | awk '{print $5" "substr ($6, 1, 1)}')"
 ttoday="$(vnstat -i eth0 | grep "today" | awk '{print $8" "substr ($9, 1, 1)}')"
 # Download/Upload yesterday
-dyest="$(vnstat -i eth0 | grep "yesterday" | awk '{print $2" "substr ($3, 1, 1)}')"
-uyest="$(vnstat -i eth0 | grep "yesterday" | awk '{print $5" "substr ($6, 1, 1)}')"
-tyest="$(vnstat -i eth0 | grep "yesterday" | awk '{print $8" "substr ($9, 1, 1)}')"
+dyest="$(vnstat | grep yesterday | awk '{print $2, $3}')"
+uyest="$(vnstat | grep yesterday | awk '{print $5, $6}')"
+tyest="$(vnstat | grep yesterday | awk '{print $8, $9}')"
 # Download/Upload current month
-dmon="$(vnstat -i eth0 -m | grep "$(date +"%b '%y")" | awk '{print $3" "substr ($4, 1, 1)}')"
-umon="$(vnstat -i eth0 -m | grep "$(date +"%b '%y")" | awk '{print $6" "substr ($7, 1, 1)}')"
-tmon="$(vnstat -i eth0 -m | grep "$(date +"%b '%y")" | awk '{print $9" "substr ($10, 1, 1)}')"
+dmon="$(vnstat | grep today | awk '{print $2, $3}')"
+umon="$(vnstat | grep today | awk '{print $5, $6}')"
+tmon="$(vnstat | grep today | awk '{print $8, $9}')"
+# total usage 
 totalmon="$(vnstat | grep "total:" | awk '{print $8, $9}')"
 
 
