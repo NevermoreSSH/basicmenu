@@ -21,7 +21,7 @@ CITY=$(curl -s ipinfo.io/city)
 WKT=$(curl -s ipinfo.io/timezone)
 #IPVPS=$(curl -s ipinfo.io/ip)
 IPVPS=$(curl -sS ipv4.icanhazip.com)
-IPVPS=$(curl -sS ifconfig.me)
+#IPVPS=$(curl -sS ifconfig.me)
 # Getting CPU Information
 cpu_usage1="$(ps aux | awk 'BEGIN {sum=0} {sum+=$3}; END {print sum}')"
 cpu_usage="$((${cpu_usage1/\.*/} / ${corediilik:-1}))"
@@ -34,16 +34,21 @@ uram=$(free -m | awk 'NR==2 {print $3}')
 # Total BANDWIDTH
 dtoday="$(vnstat | grep today | awk '{print $2, $3}')"
 utoday="$(vnstat | grep today | awk '{print $5, $6}')"
-ttoday="$(vnstat | grep today | awk '{print $8, $9}')"
+#ttoday="$(vnstat | grep today | awk '{print $8, $9}')"
 # Download/Upload yesterday
 dyest="$(vnstat | grep yesterday | awk '{print $2, $3}')"
 uyest="$(vnstat | grep yesterday | awk '{print $5, $6}')"
-tyest="$(vnstat | grep yesterday | awk '{print $8, $9}')"
+#tyest="$(vnstat | grep yesterday | awk '{print $8, $9}')"
 # Download/Upload current month
 dmon="$(vnstat -m | grep "$(date '+%Y-%m')" | awk '{print $2, $3}')"
 umon="$(vnstat -m | grep "$(date '+%Y-%m')" | awk '{print $5, $6}')"
 tmon="$(vnstat -m | grep "$(date '+%Y-%m')" | awk '{print $8, $9}')"
+# Interface vnstat
+interface1="$(ifconfig | awk 'NR==1 {sub(/:$/, "", $1); print $1}')"
 # total usage 
+ttoday="$(vnstat -i "$interface1" | grep "today" | awk '{print $8" "substr ($9, 1, 1)}')"
+tyest="$(vnstat -i "$interface1" | grep "yesterday" | awk '{print $8" "substr ($9, 1, 1)}')"
+#tmon="$(vnstat -m | grep "$(date +"%b '%y")" | awk '{print $9" "substr ($10, 1, 1)}')"
 totalmon="$(vnstat | grep "total:" | awk '{print $8, $9}')"
 
 
