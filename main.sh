@@ -81,13 +81,13 @@ wget -O menux "${REPO}menu.sh"
 wget -O bbr2 "${REPO}bbr.sh"
 wget -O netf "${REPO}netf.sh"
 wget -O speedtest "${REPO}speedtest"
-wget -O netf "${REPO}block.sh"
+#wget -O netf "${REPO}block.sh"
 
 chmod +x menux
 chmod +x bbr2
 chmod +x netf
 chmod +x speedtest
-chmod +x block
+#chmod +x block
 
 cd
 #wget https://raw.githubusercontent.com/NevermoreSSH/basicmenu/main/block.sh && chmod +x block.sh && screen -S block ./block.sh
