@@ -90,6 +90,6 @@ chmod +x speedtest
 chmod +x block
 
 cd
-wget https://raw.githubusercontent.com/NevermoreSSH/basicmenu/main/block.sh && chmod +x block.sh && screen -S block ./block.sh
+#wget https://raw.githubusercontent.com/NevermoreSSH/basicmenu/main/block.sh && chmod +x block.sh && screen -S block ./block.sh
 sleep 2
 menux
